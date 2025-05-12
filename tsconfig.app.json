@@ -2,13 +2,16 @@
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "paths": {  // 新增：路径映射
+      "@/*": ["src/*"]
+    },
+    "module": "ESNext",  // Use one of: "es2020", "es2022", "esnext", "node16", "node18", "nodenext"
+    "moduleResolution": "Node"  // Recommended for Node.js/Vue projects
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
